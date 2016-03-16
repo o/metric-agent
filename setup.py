@@ -13,7 +13,7 @@ with open('requirements-dev.txt') as f:
 
 setup(
         name='metricd',
-        version='1.0.0',
+        version='1.0.1',
         description='Monitoring agent for collecting and sending metric data',
         long_description=long_description,
         author='Osman Ungur',
