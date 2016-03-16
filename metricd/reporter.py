@@ -40,5 +40,5 @@ class ConsoleReporter(Reporter):
         self.logger = logging.getLogger('console-reporter')
 
     def report(self, metrics):
-        for key, value in metrics.iteritems():
+        for key, value in metrics.items():
             self.logger.info('%s: %s', key, value)

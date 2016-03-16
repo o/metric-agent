@@ -121,7 +121,7 @@ class SystemCollector(Collector):
             new_values['network.%s.drops.out' % interface] = interfaces[interface].dropout
 
         results = {}
-        for key, value in new_values.iteritems():
+        for key, value in new_values.items():
             results[key] = self.get_derived(key, value)
 
         return results
@@ -143,7 +143,7 @@ class SystemCollector(Collector):
         # TODO: read / write times?
 
         results = {}
-        for key, value in new_values.iteritems():
+        for key, value in new_values.items():
             results[key] = self.get_derived(key, value)
 
         return results
