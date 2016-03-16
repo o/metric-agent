@@ -54,11 +54,11 @@ The following command prints metrics to console::
     
 If you want to send metrics with HTTP POST as JSON::
 
-    metricd http --url http://localhost:3000/collect
+    $ metricd http --url http://localhost:3000/collect
     
     ## with extra headers
     
-    metricd http --url http://localhost:3000/collect --headers X-Foo=Bar --headers X-Access-Token=jaezei9G
+    $ metricd http --url http://localhost:3000/collect --headers X-Foo=Bar --headers X-Access-Token=jaezei9G
 
 License
 =======
