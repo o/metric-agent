@@ -3,7 +3,7 @@ metricd-agent
 =============
 
 .. image:: https://travis-ci.org/o/metric-agent.svg?branch=master
-:target: https://travis-ci.org/o/metric-agent
+    :target: https://travis-ci.org/o/metric-agent
 
 metricd is agent for collecting and sending metrics. Currently collects information about system and sends as JSON via HTTP. In the future more reporters (e.g statsd, graphite, riemann, influxdb) and collectors (e.g. metricd-nginx, metricd-haproxy, metricd-mysql, metricd-redis) will be available.
 
