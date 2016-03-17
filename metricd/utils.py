@@ -7,7 +7,7 @@ from .reporter import ConsoleReporter, HttpReporter
 
 
 def factory(args):
-    collector = SystemCollector(args.interval)
+    collector = SystemCollector(args.interval, args.hostname)
     reporter = None
 
     if args.reporter == 'console':

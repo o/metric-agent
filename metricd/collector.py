@@ -1,4 +1,5 @@
 import os
+import socket
 
 import psutil
 
@@ -6,9 +7,11 @@ import psutil
 class Collector(object):
     old_values = {}
     interval = None
+    hostname = None
 
-    def __init__(self, interval):
+    def __init__(self, interval, hostname):
         self.interval = interval
+        self.hostname = hostname
 
     def collect(self):
         NotImplemented()
@@ -39,7 +42,8 @@ class SystemCollector(Collector):
                 self.collect_interfaces(),
                 self.collect_io(),
                 self.collect_disks(),
-                self.collect_connections()
+                self.collect_connections(),
+                self.collect_metadata()
         )
 
     def collect_load(self):
@@ -179,3 +183,11 @@ class SystemCollector(Collector):
             return results
         except psutil.AccessDenied:  # BSD / OSX needs root access for that
             return {}
+
+    def collect_metadata(self):
+        return {
+            'metadata.hostname': self.hostname,
+            'metadata.fqdn': socket.getfqdn(),
+            'metadata.ip_address': socket.gethostbyname(socket.gethostname()),
+            'metadata.version': 1.1
+        }

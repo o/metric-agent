@@ -17,7 +17,7 @@ class HttpReporter(Reporter):
     def __init__(self, hostname, url, headers):
         self.hostname = hostname
         self.url = url
-        self.headers = dict(headers.items() + {'X-Agent-Version': '1.0.1'}.items())
+        self.headers = dict(headers.items() + {'X-Agent-Version': "1.1.0"}.items())
         self.logger = logging.getLogger('http-reporter')
 
     def report(self, metrics):
