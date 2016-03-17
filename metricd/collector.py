@@ -188,6 +188,5 @@ class SystemCollector(Collector):
         return {
             'metadata.hostname': self.hostname,
             'metadata.fqdn': socket.getfqdn(),
-            'metadata.ip_address': socket.gethostbyname(socket.gethostname()),
-            'metadata.version': 1.1
+            'metadata.ip_address': socket.gethostbyname(socket.gethostname())
         }
